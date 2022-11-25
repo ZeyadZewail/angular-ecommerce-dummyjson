@@ -9,11 +9,13 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './Products/products.module';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
