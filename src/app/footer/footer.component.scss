@@ -1,6 +1,14 @@
 $paddingY: 1%;
 $paddingX: 8%;
 
+:host{
+    background-color: white;
+    position: relative;
+    bottom:0px;
+    z-index: 1;
+}
+
+
 :root{
     border-style: solid;
     display: flex;

@@ -10,7 +10,7 @@ import { Product } from '../types/product.interface';
 @Component({
   selector: 'app-product-view',
   templateUrl: './product-view.component.html',
-  styleUrls: ['./product-view.component.css']
+  styleUrls: ['./product-view.component.scss']
 })
 export class ProductViewComponent implements OnInit{
   isloading$: Observable<boolean>;

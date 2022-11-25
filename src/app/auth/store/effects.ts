@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
+import { Router } from "@angular/router";
 import {Actions, createEffect, ofType} from "@ngrx/effects"
-import { catchError, from, map, of, switchMap } from "rxjs";
+import { catchError, exhaustMap, from, map, of, switchMap, tap } from "rxjs";
 import { AuthService } from "../auth.service";
 import * as authtActions from './actions'
 
@@ -15,5 +16,8 @@ export class authEffects{
             ))
         )
     )
-    constructor(private actions$:Actions,private authService:AuthService){}
+
+    loginRedirect = createEffect(()=>{return this.actions$.pipe(ofType(authtActions.loginSuccessful),tap((action)=>{this.router.navigate(['/'])}))},{dispatch:false})
+    
+    constructor(private actions$:Actions,private authService:AuthService,private router:Router){}
 }

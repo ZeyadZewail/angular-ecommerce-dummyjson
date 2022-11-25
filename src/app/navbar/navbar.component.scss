@@ -1,13 +1,19 @@
 $paddingY: 1%;
 $paddingX: 8%;
 
+:host{
+    background-color: white;
+    position: sticky;
+    top:0px;
+    z-index: 1;
+}
+
 :root{
     border-style: solid;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: sticky;
-    top:0px;
+    
     
 }
 
@@ -55,4 +61,10 @@ $paddingX: 8%;
 .logo{
     height: 2em;
     width: 2em;
+}
+
+.clickable{
+    &:hover{
+        cursor: pointer;
+    }
 }

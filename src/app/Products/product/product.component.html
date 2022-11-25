@@ -1,1 +1,19 @@
-<li>{{product.title}}</li>
+<div class="imageArea">
+    <img src = {{product.thumbnail}} alt={{product.title}}>
+    <p class="discountPercentage">-{{product.discountPercentage}}%</p>
+</div>
+<div class="descArea">
+    <h1>{{product.title}}</h1>
+    <p class="subtitle">{{product.description}}</p>
+    <div class="priceArea">
+        <p class ="discountedPrice"><span class="strong" >{{product.price}}</span> USD</p>
+        <p><span class="strong">{{(product.price - (product.price*(product.discountPercentage/100))).toFixed(2)}}</span> USD</p>
+    </div>
+    <div>
+        <p>Brand: <span class="strong">{{product.brand | titlecase}}</span></p>
+        <p>Category: <span class="strong">{{product.category | titlecase}}</span></p>
+        <p>In Stock: <span class="strong">{{product.stock}}</span></p>
+    </div>
+    <p class= "rating">⭐{{product.rating}}</p>
+    <button class="cartButton">ADD TO CART</button>
+</div>
