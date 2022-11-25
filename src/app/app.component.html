@@ -1,2 +1,10 @@
-Root
-<router-outlet>
+<app-navbar></app-navbar>
+<div *ngIf="!(isLoggedIn$ | async)">
+    <app-login></app-login>
+</div>
+
+<div *ngIf="(isLoggedIn$ | async)">
+    <router-outlet></router-outlet>
+</div>
+
+<h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1><h1>xdd</h1>

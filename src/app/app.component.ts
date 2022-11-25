@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { loggedInSelector } from './auth/store/selectors';
+import { AppStateInterface } from './types/appState.interface';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +11,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-ecommerce-dummyjson';
+  isLoggedIn$:Observable<boolean>;
+
+  constructor(private store:Store<AppStateInterface>){
+    this.isLoggedIn$ = store.select(loggedInSelector);
+  }
+
 }
