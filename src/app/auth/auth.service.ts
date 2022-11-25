@@ -18,7 +18,7 @@ export class AuthService {
     })
 
     if(!response.ok){
-      throw new Error("Failed to login");
+      throw new Error("Wrong Username/Password");
     }
 
 

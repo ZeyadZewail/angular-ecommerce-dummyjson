@@ -1,9 +1,14 @@
-<div class="loginArea">
+<div class="loginBox">
+    <img class="logo" src="\assets\logo.PNG" alt="logo">
+    <h1>Log in to your account</h1>
+    <h2>Welcome back! Please enter your details.</h2>
     <form (ngSubmit)="attemptLogin()">
-        <h1>Login</h1>
         <div>
             <label for="username">Username: </label>
             <input name="username" type="text" id="username" placeholder="username" [(ngModel)]="username">
+        </div>
+        <div *ngIf="(error$ | async)" class="error">
+            {{error$ | async}}
         </div>
         <div>
             <label for="password">Password: </label>
