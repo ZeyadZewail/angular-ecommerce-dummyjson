@@ -8,11 +8,11 @@ import { ProductViewComponent } from './Products/product-view/product-view.compo
 
 const routes: Routes = [
   {path: '',component:ProductViewComponent},
-  {path: 'login',component:LoginComponent},
+  {path: 'login', component:LoginComponent},
   {path: 'products',component:ProductViewComponent,canActivate:[AuthGuard]},
   {path: 'products/category/:category',component:ProductViewComponent,canActivate:[AuthGuard]},
-  {path: 'products/search',component:ProductViewComponent,canActivate:[AuthGuard]},
-  {path: 'cart',component:CartComponent,canActivate:[AuthGuard]}
+  {path: 'cart',component:CartComponent,canActivate:[AuthGuard]},
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({

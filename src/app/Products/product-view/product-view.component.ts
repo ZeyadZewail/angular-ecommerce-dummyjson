@@ -71,12 +71,16 @@ export class ProductViewComponent{
     this.store.dispatch(ProductActions.getProducts({pageNo:this.pageNo,category:this.selectedCategory,searchKeyword:this.searchedKeyword}));
   }
 
-  //page number navigator for pageniation (it keeps your category choice)
+  //page number navigator for pageniation (it keeps your category choice or search term)
   navigatePage(page:number){
     if(this.selectedCategory === null){
       this.router.navigate(['/products'],{queryParams:{page:page}});
     }else{
       this.router.navigate([`/products/category/${this.selectedCategory}`],{queryParams:{page:page}});
+    }
+    
+    if(this.searchedKeyword != null){
+      this.router.navigate([`/products/`],{queryParams:{search:this.searchedKeyword,page:page}});
     }
   }
   

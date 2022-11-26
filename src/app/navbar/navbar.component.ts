@@ -33,7 +33,7 @@ export class NavbarComponent {
   //searches for the keyword in the search bar making use of queryparam parsing
   search():void{
     let url =  "/products/"
-    this.router.navigate([url],{queryParams:{search:this.searchKeyword}});
+    this.router.navigate([url],{queryParams:{search:this.searchKeyword,page:1}});
   }
 
 }

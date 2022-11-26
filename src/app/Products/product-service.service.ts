@@ -22,7 +22,7 @@ export class ProductService {
     }
 
     if(searchedKeyword != null){
-      url = `https://dummyjson.com/products/search?q=${searchedKeyword}`;
+      url = `https://dummyjson.com/products/search?q=${searchedKeyword}&limit=9&skip=${skip}`;
     }
 
     let response = await fetch(url);
