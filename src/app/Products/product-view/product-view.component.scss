@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: row;
     padding: 8rem;
-    
     gap: 1rem;
 }
 
@@ -15,4 +14,55 @@
 .categories{
     padding: 0.5rem;
     width: 40%;
+}
+
+.pageButtons{
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    grid-column: 2;
+    gap:0.5rem;
+    height: fit-content;
+    p{
+        cursor: pointer;
+        padding: 0.5rem;
+        border: 1px solid #F6F6F6;
+        box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07);
+        border-radius: 8px;
+        
+        &:hover{
+            background: #56D9D9;
+        }
+    }
+}
+
+.strong{
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+.categories{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 0.5px solid #6e6e6e;
+    height: fit-content;
+    max-width: fit-content;
+    .categoriesList{
+        margin-top: 1rem;
+        
+        .choice{
+            cursor: pointer;
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            input[type="checkbox"]{
+                cursor: pointer;
+            }
+        }
+    }
+
+    
 }

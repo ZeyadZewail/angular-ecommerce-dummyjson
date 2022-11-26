@@ -8,11 +8,13 @@ const routes: Routes = [
   {path: '',component:ProductViewComponent},
   {path: 'login',component:LoginComponent},
   {path: 'products',component:ProductViewComponent},
-  {path: 'products/category/:category',component:ProductViewComponent},
+  {path: 'products/category/:category',component:ProductViewComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    scrollPositionRestoration: 'enabled'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

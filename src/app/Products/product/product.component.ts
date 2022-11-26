@@ -9,5 +9,5 @@ import { Product } from '../types/product.interface';
 export class ProductComponent {
   @Input()
   product:Product = {} as Product;
-
+  
 }

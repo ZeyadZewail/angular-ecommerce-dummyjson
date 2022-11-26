@@ -10,5 +10,4 @@
         <a *ngIf="!(isLoggedIn$ | async)" href="/login">Login</a>
         <a *ngIf="isLoggedIn$ | async" (click)="logOut()" class="clickable">Logout</a>
     </div>
-    
 </div>
