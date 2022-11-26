@@ -17,6 +17,7 @@ export class ProductViewComponent{
   products$: Observable<Product[]>;
   pageNo = 1;
   selectedCategory: null | string;
+  searchedKeyword: null | string;
 
   categories = [
     "smartphones",
@@ -46,6 +47,7 @@ export class ProductViewComponent{
     this.isloading$ = this.store.select(isLoadingSelector);
     this.products$ = this.store.select(productsSelector);
     this.selectedCategory = null;
+    this.searchedKeyword = null;
     
     route.queryParams.subscribe(val => { 
       this.initalize();
@@ -57,6 +59,7 @@ export class ProductViewComponent{
   
   initalize():void{
     let page = this.route.snapshot.queryParamMap.get('page');
+    this.searchedKeyword = this.route.snapshot.queryParamMap.get('search') as string;
     this.selectedCategory = this.route.snapshot.paramMap.get('category') as string;
     if(page != null){
       this.pageNo= Number(page);
@@ -64,7 +67,7 @@ export class ProductViewComponent{
         this.pageNo = 1;
       }
     }
-    this.store.dispatch(ProductActions.getProducts({pageNo:this.pageNo,category:this.selectedCategory}));
+    this.store.dispatch(ProductActions.getProducts({pageNo:this.pageNo,category:this.selectedCategory,searchKeyword:this.searchedKeyword}));
   }
 
   navigatePage(page:number){

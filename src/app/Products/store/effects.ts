@@ -9,7 +9,7 @@ export class productsEffects{
     getProducts$ = createEffect(() =>
         this.actions$.pipe(
             ofType(ProductActions.getProducts),switchMap((action)=> 
-            from(this.productService.getProducts(action.pageNo,action.category)).pipe(
+            from(this.productService.getProducts(action.pageNo,action.category,action.searchKeyword)).pipe(
                 map((products)=> ProductActions.getProductsSuccess({products})),
                 catchError((error)=> of(ProductActions.getProductsFailure({error})))
             ))

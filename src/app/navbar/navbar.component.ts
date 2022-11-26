@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -14,6 +14,8 @@ import { AppStateInterface } from '../types/appState.interface';
 export class NavbarComponent {
   isLoggedIn$:Observable<boolean>;
 
+  searchKeyword='';
+
   constructor(private store:Store<AppStateInterface>,private router:Router){
     this.isLoggedIn$ = store.select(loggedInSelector);
   }
@@ -24,6 +26,11 @@ export class NavbarComponent {
 
   navigate(url:string):void{
     this.router.navigate([url]);
+  }
+
+  search():void{
+    let url =  "/products/"
+    this.router.navigate([url],{queryParams:{search:this.searchKeyword}});
   }
 
 }

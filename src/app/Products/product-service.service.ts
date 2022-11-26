@@ -9,13 +9,17 @@ import { Product } from './types/product.interface';
 })
 export class ProductService {
 
-  async getProducts(pageNo:number,category:string): Promise<Product[]> {
+  async getProducts(pageNo:number,category:string,searchedKeyword:string): Promise<Product[]> {
     let skip = pageNo*9 - 9;
     let url = ''
     if(category == null){
       url = `https://dummyjson.com/products/?limit=9&skip=${skip}`
     }else{
       url = `https://dummyjson.com/products/category/${category}?limit=9&skip=${skip}`
+    }
+
+    if(searchedKeyword != null){
+      url = `https://dummyjson.com/products/search?q=${searchedKeyword}`;
     }
 
     let response = await fetch(url);

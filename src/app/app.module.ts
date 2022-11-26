@@ -10,6 +10,7 @@ import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './Products/products.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FooterComponent } from './footer/footer.component';
     AppRoutingModule,
     ProductsModule,
     AuthModule,
+    FormsModule,
     StoreModule.forRoot({}),
     EffectsModule.forRoot(),
     StoreDevtoolsModule.instrument({

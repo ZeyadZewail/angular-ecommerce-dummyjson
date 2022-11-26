@@ -4,10 +4,14 @@
             <img class="logo" src="\assets\logo.PNG" alt="logo">
             <p>ClickTik</p>
         </div>
-        <a href="/">Home</a>
+        <p (click)="navigate('/')" class="clickable">Home</p>
     </div>
     <div class="boxRight">
-        <p (click)="navigate('/cart')" class="clickable"><img  src = "../../assets/shoppingCart.png"></p>
+        <form *ngIf="isLoggedIn$ | async" (ngSubmit)="search()">
+            <input name="searchKeyword" for="searchKeyword" type="text" [(ngModel)]="searchKeyword">
+            <input type="submit" value="Search"/>
+        </form>
+        <p *ngIf="isLoggedIn$ | async" (click)="navigate('/cart')" class="clickable"><img  src = "../../assets/shoppingCart.png"></p>
         <p *ngIf="!(isLoggedIn$ | async)" (click)="navigate('/login')" class="clickable">Login</p>
         <p *ngIf="isLoggedIn$ | async" (click)="logOut()" class="clickable">Logout</p>
     </div>
