@@ -15,5 +15,5 @@
         <p>In Stock: <span class="strong">{{product.stock}}</span></p>
     </div>
     <p class= "rating">⭐{{product.rating}}</p>
-    <button class="cartButton">ADD TO CART</button>
+    <button (click)="addToCart(product)" class="cartButton">ADD TO CART</button>
 </div>

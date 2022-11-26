@@ -6,13 +6,15 @@ import { ProductViewComponent } from './product-view/product-view.component';
 import { EffectsModule } from '@ngrx/effects';
 import { productsEffects } from './store/effects';
 import { ProductComponent } from './product/product.component';
+import { CartComponent } from './cart/cart.component';
 
 
 
 @NgModule({
   declarations: [
     ProductViewComponent,
-    ProductComponent
+    ProductComponent,
+    CartComponent
   ],
   imports: [
     CommonModule,
