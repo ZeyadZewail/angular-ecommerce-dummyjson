@@ -24,6 +24,7 @@ export class LoginComponent {
     
   }
 
+  //calls the basic login function to update isLoading (never got used) for user feedback
   attemptLogin():void {
     
     this.store.dispatch(authActions.startLogin({username:this.username,password:this.password}));

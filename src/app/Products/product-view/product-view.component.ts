@@ -57,6 +57,7 @@ export class ProductViewComponent{
     });
   }
   
+  //depending on the URL, it gets the required params and sends them to the fetch service
   initalize():void{
     let page = this.route.snapshot.queryParamMap.get('page');
     this.searchedKeyword = this.route.snapshot.queryParamMap.get('search') as string;
@@ -70,6 +71,7 @@ export class ProductViewComponent{
     this.store.dispatch(ProductActions.getProducts({pageNo:this.pageNo,category:this.selectedCategory,searchKeyword:this.searchedKeyword}));
   }
 
+  //page number navigator for pageniation (it keeps your category choice)
   navigatePage(page:number){
     if(this.selectedCategory === null){
       this.router.navigate(['/products'],{queryParams:{page:page}});
@@ -78,6 +80,7 @@ export class ProductViewComponent{
     }
   }
   
+  //change category choice (also resets ur page #)
   navigateCategory(category:string){
     this.router.navigate([`/products/category/${category}`],{queryParams:{page:1}});
   }

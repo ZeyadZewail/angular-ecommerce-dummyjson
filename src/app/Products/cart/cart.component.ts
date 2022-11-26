@@ -24,6 +24,7 @@ export class CartComponent {
     })
   }
 
+  //returns the count as a number so its easy to parse
   getCount():number{
     return this.count
   }

@@ -20,14 +20,17 @@ export class NavbarComponent {
     this.isLoggedIn$ = store.select(loggedInSelector);
   }
 
+  //uses logOut action to logout user
   logOut():void{
     this.store.dispatch(logOut());
   }
 
+  //angular router navigator to not lose state
   navigate(url:string):void{
     this.router.navigate([url]);
   }
 
+  //searches for the keyword in the search bar making use of queryparam parsing
   search():void{
     let url =  "/products/"
     this.router.navigate([url],{queryParams:{search:this.searchKeyword}});

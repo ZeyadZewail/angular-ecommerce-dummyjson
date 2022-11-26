@@ -10,8 +10,11 @@ import { Product } from './types/product.interface';
 export class ProductService {
 
   async getProducts(pageNo:number,category:string,searchedKeyword:string): Promise<Product[]> {
-    let skip = pageNo*9 - 9;
+    //skip value is used for pagentation
+    let skip = (pageNo-1)*9;
     let url = ''
+
+    //deceterminig url to use in fetch
     if(category == null){
       url = `https://dummyjson.com/products/?limit=9&skip=${skip}`
     }else{

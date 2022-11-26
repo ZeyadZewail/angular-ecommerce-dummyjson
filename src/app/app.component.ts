@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'angular-ecommerce-dummyjson';
   isLoggedIn$:Observable<boolean>;
 
+  //keeps track of logged in status in state
   constructor(private store:Store<AppStateInterface>){
     this.isLoggedIn$ = store.select(loggedInSelector);
   }

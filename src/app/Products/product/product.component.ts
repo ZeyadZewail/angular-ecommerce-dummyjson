@@ -15,6 +15,7 @@ export class ProductComponent {
 
   constructor(private store:Store<AppStateInterface>){}
   
+  //simply calls the add to cart action and passes it, the product
   addToCart(product:Product){
     this.store.dispatch(ProductActions.addToCart({product:product}));
   }

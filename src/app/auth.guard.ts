@@ -11,6 +11,7 @@ import { AppStateInterface } from './types/appState.interface';
 export class AuthGuard implements CanActivate {
   loggedin = false;
 
+  //keeps track of logged in status in state
   constructor(private store:Store<AppStateInterface>){
     store.select(loggedInSelector).subscribe(val => { 
       this.loggedin = val;

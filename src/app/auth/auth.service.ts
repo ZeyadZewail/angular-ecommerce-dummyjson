@@ -6,6 +6,7 @@ import { User } from './types/user.interface';
 })
 export class AuthService {
 
+  //attempts to send user info to dummyjson for verification
   async login(username:string,password:string): Promise<User>{
     let response = await fetch('https://dummyjson.com/auth/login', {
       method: 'POST',
@@ -17,6 +18,7 @@ export class AuthService {
       })
     })
 
+    //if the server doesnt respond with OK, it means the username or password were wrong. (this can be improved by passing error)
     if(!response.ok){
       throw new Error("Wrong Username/Password");
     }
