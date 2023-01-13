@@ -12,16 +12,18 @@
         </div>
     </div>
     <div class="viewBox">
-        <div *ngIf="isloading$ | async">Loading....</div>
+        <!-- <div *ngIf="isloading$ | async">Loading....</div> -->
         <ng-container *ngFor="let product of products$ | async" >
             <app-product [product]="product"></app-product>
         </ng-container>
-        <div class="pageButtons">
-            <p (click)="navigatePage(pageNo)">{{pageNo}}</p>
-            <p (click)="navigatePage(pageNo+1)">{{pageNo+1}}</p>
-            <p (click)="navigatePage(pageNo+2)">...</p>
-            <p (click)="navigatePage(pageNo+5)">{{pageNo+5}}</p>
-            <p (click)="navigatePage(pageNo+6)">{{pageNo+6}}</p>
-        </div>
-    </div>    
+        
+    </div>
+      
 </div>
+<div class="pageButtons">
+    <p (click)="navigatePage(pageNo)">{{pageNo}}</p>
+    <p (click)="navigatePage(pageNo+1)">{{pageNo+1}}</p>
+    <p (click)="navigatePage(pageNo+2)">...</p>
+    <p (click)="navigatePage(pageNo+5)">{{pageNo+5}}</p>
+    <p (click)="navigatePage(pageNo+6)">{{pageNo+6}}</p>
+</div>  

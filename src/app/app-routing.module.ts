@@ -12,7 +12,7 @@ const routes: Routes = [
   {path: 'products',component:ProductViewComponent,canActivate:[AuthGuard]},
   {path: 'products/category/:category',component:ProductViewComponent,canActivate:[AuthGuard]},
   {path: 'cart',component:CartComponent,canActivate:[AuthGuard]},
-  { path: '**', redirectTo: '/' }
+  { path: '**', redirectTo: '/products' }
 ];
 
 @NgModule({

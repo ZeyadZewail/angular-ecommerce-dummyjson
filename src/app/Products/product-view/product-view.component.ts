@@ -12,6 +12,7 @@ import { Product } from '../types/product.interface';
   templateUrl: './product-view.component.html',
   styleUrls: ['./product-view.component.scss']
 })
+
 export class ProductViewComponent{
   isloading$: Observable<boolean>;
   products$: Observable<Product[]>;
@@ -19,29 +20,7 @@ export class ProductViewComponent{
   selectedCategory: null | string;
   searchedKeyword: null | string;
 
-  categories = [
-    "smartphones",
-    "laptops",
-    "fragrances",
-    "skincare",
-    "groceries",
-    "home-decoration",
-    "furniture",
-    "tops",
-    "womens-dresses",
-    "womens-shoes",
-    "mens-shirts",
-    "mens-shoes",
-    "mens-watches",
-    "womens-watches",
-    "womens-bags",
-    "womens-jewellery",
-    "sunglasses",
-    "automotive",
-    "motorcycle",
-    "lighting"
-  ];
-
+  categories = categories;
 
   constructor(private store:Store<AppStateInterface>,private route:ActivatedRoute,private router:Router){
     this.isloading$ = this.store.select(isLoadingSelector);
@@ -86,7 +65,37 @@ export class ProductViewComponent{
   
   //change category choice (also resets ur page #)
   navigateCategory(category:string){
-    this.router.navigate([`/products/category/${category}`],{queryParams:{page:1}});
+
+    if(category === this.selectedCategory){
+      this.router.navigate([`/products/`],{queryParams:{page:1}});
+    }else{
+      this.router.navigate([`/products/category/${category}`],{queryParams:{page:1}});
+    }
+
+    
   }
 
 }
+
+export let categories = [
+  "smartphones",
+  "laptops",
+  "fragrances",
+  "skincare",
+  "groceries",
+  "home-decoration",
+  "furniture",
+  "tops",
+  "womens-dresses",
+  "womens-shoes",
+  "mens-shirts",
+  "mens-shoes",
+  "mens-watches",
+  "womens-watches",
+  "womens-bags",
+  "womens-jewellery",
+  "sunglasses",
+  "automotive",
+  "motorcycle",
+  "lighting"
+];

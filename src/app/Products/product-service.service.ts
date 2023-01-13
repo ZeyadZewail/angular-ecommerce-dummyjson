@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { Product } from './types/product.interface';
-
+import { categories } from './product-view/product-view.component';
 
 @Injectable({
   providedIn: 'root'
